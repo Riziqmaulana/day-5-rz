@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Blog</title>
+</head>
+<link rel="stylesheet" href="styleBlog.css">
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    />
+<script src="blog.js"></script>
+<body>
+    <!-- navBar -->
+    <nav>
+
+        <div class="nav-left">
+            <img src="assets/logo.png" alt="logo">
+
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="blog.html">My Blog</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="nav-right">
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <p id="demo"></p>
+
+    </nav>
+    <!-- navBar -->
+
+    <!-- isi dua jadi satu -->
+    <!-- <div class="blog"> -->
+    <div class="blogsatu">
+        <!-- form -->
+        <div class="blog-form">
+            <div class="container">
+
+                <form onsubmit="addBlog(event)">
+                    <h1
+                        style="
+                        text-align: center;
+                        font-weight: 1000; 
+                        font-family: cursive; 
+                        margin: 20px auto;">
+                        ADD MY BLOG
+                    </h1>
+
+                    <div>
+                        <label style="
+                            font-weight: bold; 
+                            font-size: 20px" 
+                            for="input-project">
+                            Project Name
+                        </label>
+                        <input style="
+                            background-color: rgb(232, 235, 235); 
+                            width: 100%; 
+                            padding: 10px;
+                            border-radius: 5px;
+                            box-shadow: 0 2px 4px;
+                            border: 1px solid rgb(209, 207, 207)" 
+                            type="text" 
+                            id="input-project" />
+                    </div>
+
+                    <div style="
+                        display: flex; 
+                        flex: 100%;">
+                        <div style="margin-top: 15px;">
+                            <label 
+                                for="input-start-date" 
+                                style="
+                                font-weight: bold; 
+                                font-size: 20px;">
+                                Start Date
+                            </label>
+                            <input type="date" id="input-start-date" 
+                            style="
+                                background-color: rgb(232, 235, 235); 
+                                width: 80%; 
+                                margin-right: 50px;
+                                padding: 10px;
+                                margin-top: 5px;
+                                border-radius: 5px;
+                                box-shadow: 0 2px 4px;
+                                border: 1px solid rgb(209, 207, 207)" />
+                        </div>
+
+                        <div style="margin-top: 15px;">
+                            <label for="input-end-date" 
+                                style="
+                                font-weight: bold; 
+                                font-size: 20px">
+                                End Date
+                            </label>
+                            <input type="date" id="input-end-date" 
+                            style="
+                                background-color: rgb(232, 235, 235); 
+                                width: 100%; 
+                                padding: 10px;
+                                margin-top: 5px;
+                                border-radius: 5px;
+                                box-shadow: 0 2px 4px;
+                                border: 1px solid rgb(209, 207, 207)" />
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 15px;">
+                        <label for="input-description" style="
+                            font-weight: bold; 
+                            font-size: 20px;">
+                            Description
+                        </label>
+                        <textarea id="input-description" 
+                            style="
+                            background-color: rgb(232, 235, 235); 
+                            width: 100%; 
+                            padding: 10px;
+                            margin-top: 5px;
+                            border-radius: 5px;
+                            box-shadow: 0 2px 4px;
+                            border: 1px solid rgb(209, 207, 207);
+                            height: 100px;">
+                        </textarea>
+                    </div>
+
+                    <div style="margin-top: 15px;">
+                        <p style="font-weight: bold; font-size: 20px;">Technologies</p>
+                        <input type="checkbox" id="input-radio">
+                        <label style="margin-right: 60px;" for="radio">Node JS</label>
+                        <input type="checkbox" id="input-radio">
+                        <label for="input-radio">Next JS</label>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <input type="checkbox" id="input-radio">
+                        <label style="margin-right: 60px;" for="input-radio">React JS</label>
+                        <input type="checkbox" id="input-radio">
+                        <label for="radio">TypeScript</label>
+                    </div>
+
+                    <div style="margin-top: 15px; font-size: 20px;">
+                        <label 
+                            style="
+                            font-weight: bold;">
+                            Upload Image
+                        </label>
+                        <div class="input-blog-image-group">
+                            <label for="input-blog-image">
+                                <p>Click File</p>
+                                <img src="" alt="" />
+                            </label>
+                            <input type="file" id="input-blog-image" hidden />
+                        </div>
+                    </div>
+
+                    <div class="tombol">
+                        <button style="
+                            text-align: end;
+                            background-color: rgb(32, 30, 30); 
+                            color:white;
+                            margin-top: 10px;
+                            border: none;
+                            padding: 8px 30px;
+                            border-radius: 10px;
+                            font-size: 12px;
+                            cursor:pointer;">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- form -->
+
+
+        <!-- Isi Push  -->
+        <h1 style="
+        text-align: center; 
+        font-family: cursive;
+        font-weight: 1000;
+        ">My Blog</h1>
+        <div id="contents" class="blog-list">
+            <!-- Content 1copy -->
+            <div class="blog-list-item">
+                <div class="cardcon">
+                    <div class="blog-image">
+                        <img src="./assets/setupcomp.jpeg" alt="Gambar wong" />
+                    </div>
+                    <div class="blog-content">
+                        <a href="blogDetail.html">
+                        <h3>
+                            <!-- <a href="blog-detail.html" target="_blank">Random Description -->
+                            <a href="blogDetail.html">
+                                Random Description
+                            </a>
+                        </h3>
+                        </a>
+                        <div class="detail-blog-content">
+                            01 Januari 2022 00:01 WIB | Anonymous
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis aperiam magni 
+                            quasi voluptatem. Dolor corporis natus praesentium, beatae error optio repellat 
+                            reprehenderit esse? Hic in minima facilis maxime incidunt quaerat?
+                        </p>
+                        <!-- <div style="margin-bottom: 15px;">
+    
+                        </div> -->
+                        <div class="btn-group">
+                            <button class="btn-edit">Modif</button>
+                            <button class="btn-post">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Content 2copy -->
+            <div class="blog-list-item">
+                <div class="blog-image">
+                    <img src="./assets/setupcomp.jpeg" alt="Gambar wong" />
+                </div>
+                <div class="blog-content">
+                    <h3>
+                        <a href="blog-detail.html" target="_blank">Random Description
+                        </a>
+                    </h3>
+                    <div class="detail-blog-content">
+                        01 Januari 2022 00:01 WIB | Anonymous
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis aperiam magni 
+                        quasi voluptatem. Dolor corporis natus praesentium, beatae error optio repellat 
+                        reprehenderit esse? Hic in minima facilis maxime incidunt quaerat?
+                    </p>
+                    <div style="margin-bottom: 15px;">
+
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn-edit">Modif</button>
+                        <button class="btn-post">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Content 3copy
+            <div class="blog-list-item">
+                <div class="blog-image">
+                <img src="https://blog.printerous.com/wp-content/uploads/2016/10/pakaian-rapi.jpg" alt="Gambar wong" />
+                </div>
+                <div class="blog-content">
+                    <h3>
+                        <a href="blog-detail.html" target="_blank">Random Description
+                        </a>
+                    </h3>
+                    <div class="detail-blog-content">
+                        01 Januari 2022 00:01 WIB | Anonymous
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis aperiam magni 
+                        quasi voluptatem. Dolor corporis natus praesentium, beatae error optio repellat 
+                        reprehenderit esse? Hic in minima facilis maxime incidunt quaerat?
+                    </p>
+                    <div style="margin-bottom: 15px;">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAXRJREFUSEvFlbsuRFEUhr9pNFPQaDRDLy4vwLwBSokErQTxBHgDxNQukSh5AzyBywugVqmU5Je15WTZ+5x9ZnIyuztnr/X/a/3rsls0fFoN4zM0gjlgF+gCkxVZvgH3wDHw5G1jGWwAZ31KtwmcF309gSJ/7BM8uM0XM/EEYl+vQfAJLJuU++Z3AUiF3+MJpGcnQSBHaTxmdVEg+lbEIrkxP2FMpQi+I+DPBiDHcbv/ACSnMh41UhH/w/UZxAgUzQSwBiwCsnkAroCvRM3+cKsIgp49YMtldwpsA7fAkrvLJtgDLi3iaQfyAswCB0AocG2JDoET4A6YcQShwAMRBIk0pTuO4AhQhgNJJEy14QiwCiwYiYp8DbQtu+SGqCqyHNWeK5E9oz2l3i+2Z2UNygZNUoRlphnQcMWO5kb30UmuuypiBKWrQqv5NRFZ7u/SZSeQRtd1iFKZqL9VyNTyC7bv9uCobbMenFwpsuyG9iZnRZdj9AO5y0cZdyMG3QAAAABJRU5ErkJggg=="/>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUxJREFUSEu1lYFNwzAQRV8nYATKBMAE7QgwAXQCYALoBLQTABMAGzAC3QA2gAlAP7Ktw7V9DlJOsiIl9r3z+ftnxsQxmzg/PYBLYAGchKGa3sN4AV5bRbYAZ8A9MHd2+QHcAILtRQ2wAa5Gtk9rBPoTJcB/ksekW+DaEnKA2vLcqPwzJLDtuANuzZpz264coH4eVgDf4ZA1x0YO0PejOMECpJaHRvVPgObEWAZ16alhI+3CAh6BiwZgDahahdfKVIwFSNvHnYC8Lfky5TrVSwv4cWRpd+ABUu4egHfb38JZ5PUN6+zimoI8wBdwkGXfRVvpOWQPUGpt8ZA9mY45gxUgVe65aeui9QJ025NBjrGKXkDTKrSrmtn1AFyzi2Io3WoPkFvJkMv74Wg30fxqgJLDJtV6EtREqUtmpgs1KKPyrmgEPQDHQdqfJwf8ArJlSRlOmzLXAAAAAElFTkSuQmCC"/>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUdJREFUSEvdleExBEEQhb+LgAzIABEgAkTgRIAIEAEhyAARkAGXAREgAuq7mrmanZuZ29uq/XNTdX92ut/r97qnb8LIZzIyPptHsA38rLDNmEvgFNgHPoFH4C7k+f05YuQWGWzAR4PkDTgs3Jsj4TXwUCLw8j0oOAMEyk+MqfFLMgsE8yJzBX9JplUoO7VMdU8Ndb/BgUVxOYHenWQAfvOnfQfAfYPgJRAsQlICm7cbwHYGvg8V36a5OcH3QOCY1mlwqQfaMLR68bSwM4F5D5wSG7Q1QMlXsLiTWloVTsp53qwehEv2lCzy2xHw2gMwDbF61S9tgdqycxJu1iA5rjzM5jZ1bH1s2tU6F2EXFWNqCrQpLrQauK/2qgWe90BQK97rYY0vVnDHunlKCqah0TYtkrnAbGC6NlZhz+837x+tl+x1gka36B/CnzgZFPaBJAAAAABJRU5ErkJggg=="/>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAOdJREFUSEvllWENwjAQhb8pAAk4AAeAA1AAEnCCBXAACgAHSEACKIC85Eqabg0s1y0h3K82ub5vd++6VnQcVcf69A44A1NnVdKYB420gqdTvKabAzyAg2UvgEFL8Fs3B9gDaxPdAaufA9yTFg1LVyAPriY6MQ8uth8BAsqjGyCPxskHfPRAYjM7FEY3HJI3EleVITbANtq7ALluCRimzQVQe06AWreMvIovqQug1gmgOJoHWncCaPJKsGIV/DFAIxdfNE2OTFRorQlSNOV95UHLP0MtPWtyiQcnNr7/J9Pbmnyviiub4As/E0wZX0UvUwAAAABJRU5ErkJggg=="/>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn-edit">Modif</button>
+                        <button class="btn-post">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Content 4copy -->
+            <!-- <div class="blog-list-item">
+                <div class="blog-image">
+                    <img src="https://blog.printerous.com/wp-content/uploads/2016/10/pakaian-rapi.jpg" alt="Gambar wong" />
+                </div>
+                <div class="blog-content">
+                    <h3>
+                        <a href="blog-detail.html" target="_blank">Random Description
+                        </a>
+                    </h3>
+                    <div class="detail-blog-content">
+                        01 Januari 2022 00:01 WIB | Anonymous
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis aperiam magni 
+                        quasi voluptatem. Dolor corporis natus praesentium, beatae error optio repellat 
+                        reprehenderit esse? Hic in minima facilis maxime incidunt quaerat?
+                    </p>
+                    <div style="margin-bottom: 15px;">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAXRJREFUSEvFlbsuRFEUhr9pNFPQaDRDLy4vwLwBSokErQTxBHgDxNQukSh5AzyBywugVqmU5Je15WTZ+5x9ZnIyuztnr/X/a/3rsls0fFoN4zM0gjlgF+gCkxVZvgH3wDHw5G1jGWwAZ31KtwmcF309gSJ/7BM8uM0XM/EEYl+vQfAJLJuU++Z3AUiF3+MJpGcnQSBHaTxmdVEg+lbEIrkxP2FMpQi+I+DPBiDHcbv/ACSnMh41UhH/w/UZxAgUzQSwBiwCsnkAroCvRM3+cKsIgp49YMtldwpsA7fAkrvLJtgDLi3iaQfyAswCB0AocG2JDoET4A6YcQShwAMRBIk0pTuO4AhQhgNJJEy14QiwCiwYiYp8DbQtu+SGqCqyHNWeK5E9oz2l3i+2Z2UNygZNUoRlphnQcMWO5kb30UmuuypiBKWrQqv5NRFZ7u/SZSeQRtd1iFKZqL9VyNTyC7bv9uCobbMenFwpsuyG9iZnRZdj9AO5y0cZdyMG3QAAAABJRU5ErkJggg=="/>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUxJREFUSEu1lYFNwzAQRV8nYATKBMAE7QgwAXQCYALoBLQTABMAGzAC3QA2gAlAP7Ktw7V9DlJOsiIl9r3z+ftnxsQxmzg/PYBLYAGchKGa3sN4AV5bRbYAZ8A9MHd2+QHcAILtRQ2wAa5Gtk9rBPoTJcB/ksekW+DaEnKA2vLcqPwzJLDtuANuzZpz264coH4eVgDf4ZA1x0YO0PejOMECpJaHRvVPgObEWAZ16alhI+3CAh6BiwZgDahahdfKVIwFSNvHnYC8Lfky5TrVSwv4cWRpd+ABUu4egHfb38JZ5PUN6+zimoI8wBdwkGXfRVvpOWQPUGpt8ZA9mY45gxUgVe65aeui9QJ025NBjrGKXkDTKrSrmtn1AFyzi2Io3WoPkFvJkMv74Wg30fxqgJLDJtV6EtREqUtmpgs1KKPyrmgEPQDHQdqfJwf8ArJlSRlOmzLXAAAAAElFTkSuQmCC"/>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUdJREFUSEvdleExBEEQhb+LgAzIABEgAkTgRIAIEAEhyAARkAGXAREgAuq7mrmanZuZ29uq/XNTdX92ut/r97qnb8LIZzIyPptHsA38rLDNmEvgFNgHPoFH4C7k+f05YuQWGWzAR4PkDTgs3Jsj4TXwUCLw8j0oOAMEyk+MqfFLMgsE8yJzBX9JplUoO7VMdU8Ndb/BgUVxOYHenWQAfvOnfQfAfYPgJRAsQlICm7cbwHYGvg8V36a5OcH3QOCY1mlwqQfaMLR68bSwM4F5D5wSG7Q1QMlXsLiTWloVTsp53qwehEv2lCzy2xHw2gMwDbF61S9tgdqycxJu1iA5rjzM5jZ1bH1s2tU6F2EXFWNqCrQpLrQauK/2qgWe90BQK97rYY0vVnDHunlKCqah0TYtkrnAbGC6NlZhz+837x+tl+x1gka36B/CnzgZFPaBJAAAAABJRU5ErkJggg=="/>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAOdJREFUSEvllWENwjAQhb8pAAk4AAeAA1AAEnCCBXAACgAHSEACKIC85Eqabg0s1y0h3K82ub5vd++6VnQcVcf69A44A1NnVdKYB420gqdTvKabAzyAg2UvgEFL8Fs3B9gDaxPdAaufA9yTFg1LVyAPriY6MQ8uth8BAsqjGyCPxskHfPRAYjM7FEY3HJI3EleVITbANtq7ALluCRimzQVQe06AWreMvIovqQug1gmgOJoHWncCaPJKsGIV/DFAIxdfNE2OTFRorQlSNOV95UHLP0MtPWtyiQcnNr7/J9Pbmnyviiub4As/E0wZX0UvUwAAAABJRU5ErkJggg=="/>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn-edit">Modif</button>
+                        <button class="btn-post">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- isi  -->
+    </div>
+</body>
+</html>
